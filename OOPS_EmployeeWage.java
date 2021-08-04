@@ -5,6 +5,10 @@ import java.util.Random;
 public class OOPS_EmployeeWage {
 
 	static int WAGE_PER_HOUR = 200;
+	static int FULLTIME_HOUR = 8;
+	static int PARTTIME_HOUR = 4;
+	static int WORKING_DAYS = 20;
+	static int TOTAL_WORKING_HOURS = 100;
 	static int hours;
 	static int monthly, totalHours = 0;
 
@@ -22,10 +26,10 @@ public class OOPS_EmployeeWage {
 			hours = 0;
 			break;
 		case 1:
-			hours = 4;
+			hours = PARTTIME_HOUR;
 			break;
 		case 2:
-			hours = 8;
+			hours = FULLTIME_HOUR;
 			break;
 		}
 	}
@@ -36,7 +40,7 @@ public class OOPS_EmployeeWage {
 
 	public static int monthlyWage() {
 		int i = 0;
-		while (i < 20 && totalHours < 100) {
+		while (i < WORKING_DAYS && totalHours < TOTAL_WORKING_HOURS) {
 			isPresent();
 			monthly += dailyWage(hours);
 			totalHours += hours;
