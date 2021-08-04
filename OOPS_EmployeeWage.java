@@ -3,10 +3,10 @@ package Day8;
 import java.util.Random;
 
 public class OOPS_EmployeeWage {
-	
-	static int WAGE_PER_HOUR= 200;
+
+	static int WAGE_PER_HOUR = 200;
 	static int hours;
-	static int monthly=0;
+	static int monthly, totalHours = 0;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation Program");
@@ -14,22 +14,30 @@ public class OOPS_EmployeeWage {
 
 	public static void isPresent() {
 		Random ran = new Random();
-		int isPresent= ran.nextInt(3);
-		switch(isPresent) {
-			case 0: hours=0; break;
-			case 1: hours=4; break;
-			case 2: hours=8; break;
+		int isPresent = ran.nextInt(3);
+		switch (isPresent) {
+		case 0:
+			hours = 0;
+			break;
+		case 1:
+			hours = 4;
+			break;
+		case 2:
+			hours = 8;
+			break;
 		}
 	}
-	
+
 	public static int dailyWage(int h) {
-		return h*WAGE_PER_HOUR;
+		return h * WAGE_PER_HOUR;
 	}
-	
+
 	public static int monthlyWage() {
-		for(int i=0; i<20; i++) {
+		int i = 0;
+		while (i < 20 && totalHours < 100) {
 			isPresent();
-			monthly=monthly+dailyWage(hours);
+			monthly += dailyWage(hours);
+			totalHours += hours;
 		}
 		return monthly;
 	}
