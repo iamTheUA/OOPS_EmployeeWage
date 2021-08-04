@@ -10,6 +10,8 @@ public class OOPS_EmployeeWage {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation Program");
+		System.out.println("Monthly Wage : " + monthlyWage());
+
 	}
 
 	public static void isPresent() {
@@ -38,7 +40,10 @@ public class OOPS_EmployeeWage {
 			isPresent();
 			monthly += dailyWage(hours);
 			totalHours += hours;
+			i++;
+			System.out.println("Day" + i + ": " + dailyWage(hours));
 		}
+
 		return monthly;
 	}
 }
