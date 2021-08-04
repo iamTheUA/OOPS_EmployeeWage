@@ -1,5 +1,7 @@
 package Day8;
 
+import java.util.Random;
+
 public class OOPS_EmployeeWage {
 
 	public static void main(String[] args) {
@@ -7,4 +9,8 @@ public class OOPS_EmployeeWage {
 		System.out.println("Welcome to Employee Wage Computation Program");
 	}
 
+	public static void isPresent() {
+		Random ran = new Random();
+		int isPresent= ran.nextInt(2);
+	}
 }
