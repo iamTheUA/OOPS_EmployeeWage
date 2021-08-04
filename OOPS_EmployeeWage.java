@@ -6,6 +6,7 @@ public class OOPS_EmployeeWage {
 	
 	static int WAGE_PER_HOUR= 200;
 	static int hours;
+	static int monthly=0;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation Program");
@@ -25,4 +26,11 @@ public class OOPS_EmployeeWage {
 		return h*WAGE_PER_HOUR;
 	}
 	
+	public static int monthlyWage() {
+		for(int i=0; i<20; i++) {
+			isPresent();
+			monthly=monthly+dailyWage(hours);
+		}
+		return monthly;
+	}
 }
