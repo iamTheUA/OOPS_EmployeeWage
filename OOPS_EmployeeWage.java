@@ -4,19 +4,21 @@ import java.util.Random;
 
 public class OOPS_EmployeeWage {
 
+	public static void main(String[] args) {
+		System.out.println("Welcome to Employee Wage Computation Program");
+		Emp e1 = new Emp();
+		System.out.println("Monthly Wage : " + e1.monthlyWage());
+	}
+}
+
+class Emp {
 	static int WAGE_PER_HOUR = 200;
 	static int FULLTIME_HOUR = 8;
 	static int PARTTIME_HOUR = 4;
 	static int WORKING_DAYS = 20;
 	static int TOTAL_WORKING_HOURS = 100;
-	static int hours;
-	static int monthly, totalHours = 0;
-
-	public static void main(String[] args) {
-		System.out.println("Welcome to Employee Wage Computation Program");
-		System.out.println("Monthly Wage : " + monthlyWage());
-
-	}
+	public static int hours;
+	public static int monthly, totalHours = 0;
 
 	public static void isPresent() {
 		Random ran = new Random();
@@ -38,7 +40,7 @@ public class OOPS_EmployeeWage {
 		return h * WAGE_PER_HOUR;
 	}
 
-	public static int monthlyWage() {
+	public int monthlyWage() {
 		int i = 0;
 		while (i < WORKING_DAYS && totalHours < TOTAL_WORKING_HOURS) {
 			isPresent();
